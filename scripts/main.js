@@ -11,6 +11,11 @@ $(document).ready(function () {
                             <td>' + item.unit + '</td>\
                             <td>' + addCart + '</td>\
                           </tr>');
+                $('button', listItem).click(function() {
+                    var totalCount = parseInt($('#count').text()) + 1;
+                    $('#count').text(totalCount);
+                });
+
                 $('#item-table').append(listItem);
             });
         };
