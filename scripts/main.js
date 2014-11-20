@@ -1,6 +1,8 @@
 $(document).ready(function () {
     var feature = (function () {
         var initItems = function () {
+            $('#count').text(cartStorage.getCount());
+
             var items = loadAllItems();
 
             _(items).each(function (item) {
@@ -12,8 +14,10 @@ $(document).ready(function () {
                             <td>' + addCart + '</td>\
                           </tr>');
                 $('button', listItem).click(function() {
-                    var totalCount = parseInt($('#count').text()) + 1;
-                    $('#count').text(totalCount);
+                    cartStorage.setCount(item.barcode);
+                    cartStorage.setCount('count');
+                    $('#count').text(cartStorage.getCount('count'));
+
                 });
 
                 $('#item-table').append(listItem);
