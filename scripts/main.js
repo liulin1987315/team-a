@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var feature = (function () {
         var initItems = function () {
-            $('#count').text(cartStorage.getCount());
+            $('#count').text(cartStorage.getCount('count'));
 
             var items = loadAllItems();
 
